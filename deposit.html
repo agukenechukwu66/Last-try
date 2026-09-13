@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Funds</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+        header { background: #333; color: #fff; padding: 10px 0; text-align: center; }
+        .content { margin-top: 20px; text-align: center; background: #fff; padding: 20px; border-radius: 5px; }
+        input[type="number"], input[type="text"] { width: 80%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #5cb85c; color: #fff; padding: 10px 15px; border: none; border-radius: 4px; cursor: pointer; }
+        .wallet-info { display: none; margin-top: 20px; background: #eee; padding: 15px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Deposit USDT</h1>
+</header>
+
+<div class="content">
+    <p>Enter the amount you wish to deposit:</p>
+    <input type="number" id="amount" placeholder="Amount in USDT">
+    <br>
+    <button onclick="showWallet()">Generate Deposit Address</button>
+
+    <div id="walletInfo" class="wallet-info">
+        <p>Please send your USDT (TRC-20) to the following address:</p>
+        <input type="text" value="TGVubuR4VPTsNrimF5xnx1826hyokKAPvu" readonly>
+        <p>After sending, please contact support to confirm your deposit.</p>
+    </div>
+</div>
+
+<script>
+    function showWallet() {
+        const amount = document.getElementById('amount').value;
+        if (amount > 0) {
+            document.getElementById('walletInfo').style.display = 'block';
+        } else {
+            alert('Please enter a valid amount.');
+        }
+    }
+</script>
+
+</body>
+</html>
